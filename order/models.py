@@ -1,16 +1,20 @@
 from django.db import models
 from payment.models import Pay
+# from .cart.models import Cart
+from django.db import models
 from cart.models import Cart
+from payment.models import Pay
+
 from shipping.models import Shipping
-from customer.models import Customer
+from customer_management.models import Customer
 
    # Define your payment fields here
 
 class Order(models.Model):
     payment = models.OneToOneField(Pay, on_delete=models.PROTECT, null=True)
-    cart = models.ForeignKey(Cart,on_delete=models.CASCADE)
-    shipping = models.ForeignKey(Shipping,on_delete=models.CASCADE)
-    customer = models.ForeignKey (Customer,on_delete=models.CASCADE)
+    cart = models.ForeignKey(Cart,on_delete=models.CASCADE, null=True)
+    shipping = models.ForeignKey(Shipping,on_delete=models.CASCADE, null=True)
+    customer = models.ForeignKey(Customer,on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=32)
     quantity = models.PositiveBigIntegerField()
     total = models.IntegerField()

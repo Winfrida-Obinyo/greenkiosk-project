@@ -1,0 +1,39 @@
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #6B6B6B; 
+    color: #4A4A4A;
+  }
+  /* Style table headers */
+  th {
+    background-color: #827a7a; 
+    padding: 12px; 
+   
+    text-align: left;
+    font-weight: bold; 
+    padding: 40px;
+  }
+  /* Style table data cells */
+  td {
+    padding: 10px; 
+    border: 1px solid #A2A2A2; 
+    padding: 40px;
+  }
+  /* Style the link in the last column */
+  td a {
+    display: inline-block;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #0088FF; 
+    border-radius: 4px;
+    background-color: #E6E6E6; 
+    transition: background-color 0.2s ease; 
+  }
+
+  td a:hover {
+    background-color: #9596e3; 
+  }
+
+  

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'inventory/product_list.css' %}">
+    <title>Document</title>
+    
+</head>
+<body>
+     <table >
+        <thead >
+            <tr>
+                <th >Order Number</th>
+                <th >Carrier</th>
+                <th >Tracking Number</th>
+                <th >Status</th>
+                <th>Estimated Delivery</th>
+                <th>View Details</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody> 
+            {% for shipping in shippings %}
+            <tr>
+                <td >{{ shipping.order_number }}</td>
+                <td >{{ shipping.carrier }}</td>
+                <td >{{ shipping.tracking_number}}</td>
+                <td >{{ shipping.estimated_delivery}}</td>
+                <td >{{ shipping.status}}</td>
+
+                <td>
+                    <a href="{% url 'shipping_detail_view' id=shipping.id %}">View details</a>
+                   
+
+                </td>
+                <td>
+                    <a href="{% url 'shipping_edit_view' id=shipping.id %}">Edit Details</a>
+                  
+                </td>
+            </tr>
+            {%endfor%}
+           
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'inventory/product_list.css' %}">
+    <title>Document</title>
+    
+</head>
+<body>
+     <table >
+        <thead >
+            <tr>
+                <th >Code</th>
+                <th >Discount</th>
+                <th> Details</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody> 
+            {% for discount in discounts %}
+            <tr>
+                <td >{{ discount.code }}</td>
+                <td >{{ discount.discount_percent }}</td>
+               
+
+                <td>
+                    <a href="{% url 'discount_detail_view' id=discount.id %}">View details</a>
+                   
+
+                </td>
+                <td>
+                    <a href="{% url 'discount_edit_view' id=discount.id %}">Edit</a>
+                  
+                </td>
+            </tr>
+            {%endfor%}
+           
+        </tbody>
+    </table>
+</body>
+</html>

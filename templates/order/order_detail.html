@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'inventory/product_detail.css' %}">
+    <title>Document</title>
+</head>
+  <body >
+    <div class="card">
+    <h4 >{{ order.name }}</h4>
+    <p >{{ order.customer }}</p>
+    <p >{{ order.quantity }}</p>
+    <p >{{ order.payment}}</p>
+    <p >{{ order.cart }}</p>
+    <p >{{ order.shipping }}</p>
+    <span >{{ order.total}}</span>
+    <br>
+    <a href="{% url 'order_upload_view' %}"><button style>Save Order</button></a>
+    
+</div>
+</body> 
+</html> 
+
+
+
+
+
+
+
+
+
+
